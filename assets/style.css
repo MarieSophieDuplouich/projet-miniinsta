@@ -1,0 +1,42 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: black 1px solid; 
+    color: #FFFFFF;
+}
+
+body {
+    font-family: JejuGothic, sans-serif;
+    background: linear-gradient(180deg, #7C16A4 0%, #FF00B3 100%);
+    background-repeat: no-repeat;
+
+}
+
+a {
+    color: aliceblue;
+}
+
+h1 {
+    font-weight: 400;
+    font-size: 29px;
+    line-height: 100%;
+    letter-spacing: 39%;
+    text-align: center;
+    vertical-align: middle;
+
+}
+
+h2 {
+    font-weight: 400;
+    font-size: 19px;
+    line-height: 100%;
+    letter-spacing: 12%;
+    text-align: center;
+    vertical-align: middle;
+}
+
+/* background: #000000;
+background: #FFFFFF;
+background: #E379CC; */
+

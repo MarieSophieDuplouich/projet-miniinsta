@@ -86,3 +86,78 @@ if (isset($_FILES['photo'])) {
 }?>
 </body>
 </html>
+
+<?php
+// function multiple(array $_files, $top = TRUE)
+// {
+//     $files = array();
+//     foreach($_files as $name=>$file){
+//         if($top) $sub_name = $file['name'];
+//         else    $sub_name = $name;
+        
+//         if(is_array($sub_name)){
+//             foreach(array_keys($sub_name) as $key){
+//                 $files[$name][$key] = array(
+//                     'name'     => $file['name'][$key],
+//                     'type'     => $file['type'][$key],
+//                     'tmp_name' => $file['tmp_name'][$key],
+//                     'error'    => $file['error'][$key],
+//                     'size'     => $file['size'][$key],
+//                 );
+//                 $files[$name] = multiple($files[$name], FALSE);
+//             }
+//         }else{
+//             $files[$name] = $file;
+//         }
+//     }
+//     return $files;
+// }
+
+// print_r($_FILES);
+// /*
+// Array
+// (
+//     [image] => Array
+//         (
+//             [name] => Array
+//                 (
+//                     [0] => 400.png
+//                 )
+//             [type] => Array
+//                 (
+//                     [0] => image/png
+//                 )
+//             [tmp_name] => Array
+//                 (
+//                     [0] => /tmp/php5Wx0aJ
+//                 )
+//             [error] => Array
+//                 (
+//                     [0] => 0
+//                 )
+//             [size] => Array
+//                 (
+//                     [0] => 15726
+//                 )
+//         )
+// )
+// */
+// $files = multiple($_FILES);
+// print_r($files);
+// /*
+// Array
+// (
+//     [image] => Array
+//         (
+//             [0] => Array
+//                 (
+//                     [name] => 400.png
+//                     [type] => image/png
+//                     [tmp_name] => /tmp/php5Wx0aJ
+//                     [error] => 0
+//                     [size] => 15726
+//                 )
+//         )
+// )
+// */
+?>

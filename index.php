@@ -10,41 +10,53 @@
 
 <body>
 
-<h1>Mini Insta</h1>
-<h2>Ajoutez une photo !</h2>
+    <h1>Mini Insta</h1>
+    <h2>Ajoutez une photo !</h2>
     <form action="upload-photo.php" method="post" enctype="multipart/form-data">
         <input type="file" name="picture">
         <button>Envoyer</button>
-    </form> 
+    </form>
 
-  <?php  $photos_dir = opendir("photos"); ?> 
-<?php
-  function lire_dossier()
-{
-    $file_names = [];
-    try {
-        $photos_dir = opendir("photos");
+    <?php $photos_dir = opendir("photos"); ?>
+    <?php
+    function lire_dossier()
+    {  
+         $file_names = [$_POST];
+        try {
+            $photos_dir = opendir("photos");
 
-        do {
-            $file_name = readdir($photos_dir);
-            // Je n'affiche pas les fichiers cachés (commençant par un point) et les répertoires spéciaux "." et ".."
-            if ($file_name && $file_name != "." && $file_name != ".." && $file_name != "/") {
-                $file_names[] = $file_name; // J'ajoute le nom du fichier à la liste
-            }
-        } while ($file_name);
-    } catch (\Throwable $th) {
-        throw $th;
+            do {
+                $file_name = readdir($photos_dir);
+
+                // Je n'affiche pas les fichiers cachés (commençant par un point) et les répertoires spéciaux "." et ".."
+                if ($file_name && $file_name != "." && $file_name != ".." && $file_name != "/") {
+                    $file_names[] = $file_name; // J'ajoute le nom du fichier à la liste
+                   
+                }
+            } while ($file_name);
+        } catch (\Throwable $th) {
+            throw $th;
+        }
+        return $file_names;
     }
-    return $file_names;
-}
 
-$liste_des_fichiers = lire_dossier();
-foreach ($liste_des_fichiers as $file_name) {
-    echo $file_name . "<br>";
-}
-?>
+    $liste_des_fichiers = lire_dossier();
+    foreach ($liste_des_fichiers as $file_name) {
+        echo $file_name . "<br><img src='photos/$file_name'><p>jbjbk <p/>";
+    //    var_dump($file_name);
+    }
+    ?>
 
 
 </body>
 
 </html>
+<!-- 
+  echo "<pre>";
+var_dump($file_names);
+echo "</pre>";
+$file_author= ['fichier']['author'];
+-->
+
+echo filesize("test.txt");
+echo filetype("test.txt");

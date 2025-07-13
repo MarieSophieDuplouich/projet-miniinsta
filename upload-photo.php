@@ -1,14 +1,23 @@
     <?php
+
+
+    require 'index.php';// dois-je mettre ceci ???
+
+
     $isSuccessful = false;
     // Si le forumlaire à bien soumis un input nommé "picture"
-    if (isset($_FILES["picture"]["tmp_name"]["file"])) {
+    if (isset($_FILES["picture"]["tmp_name"]) && isset($_POST["author"])) {
         var_dump($_FILES); // j'affiche les informations du fichier uploadé pour m'aider au débogage
-
+        $author = $_POST["author"];
         // Je récupère le chemin temporaire du fichier uploadé
-        $chemin_tmp = $_FILES["picture"]["tmp_name"]["file"];
+        $chemin_tmp = $_FILES["picture"]["tmp_name"];
+        $originalName = $_FILES["picture"]["name"];
+        $timestamp = date("YmdHis");
+
+        $newfileName =  $timestamp . '-' . $author . '-' . $originalName;
 
         // A l'aide du chemin temporaire, je déplace le fichier vers le dossier "photos/" avec le nom du fichier uploadé
-        $isSuccessful = move_uploaded_file($chemin_tmp, "photos/" . $_FILES["picture"]["name"]["file"]);
+        $isSuccessful = move_uploaded_file($chemin_tmp, "photos/" .  $newfileName);
     }
 
     ?>
@@ -32,9 +41,9 @@
     echo $file_name . "test<br>"; ?>
 
 
-<!-- écrire ici post et voir page 158 lire cours la lecture du dossier -->
+    <!-- écrire ici post et voir page 158 lire cours la lecture du dossier -->
 
-<!-- $_FILES ["picture"]["tmp_name"]
+    <!-- $_FILES ["picture"]["tmp_name"]
 $_FILES ["picture"]["type"]
 $_FILES ["picture"]["size"]
 $_FILES ["picture"]["author"]

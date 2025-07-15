@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    border: black 1px solid;
+    /* border: black 1px solid; */
     color: #FFFFFF;
 }
 
@@ -40,29 +40,81 @@ h2 {
     vertical-align: middle;
 }
 
-form {
-    background-color: #E379CC;
-  
-}
 
 input {
-    background-color: #ffffff;
+    
     color: black;
     width: 334;
     height: 70;
     opacity: 1;
     top: 165px;
     left: 30px;
-    
+
 }
+
+form{
+
+    width: 600px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-color: #E379CC;
+}
+
+
+form button{
+
+   position: relative;
+   width: 155px;
+   height: 55px;
+   margin:20px;
+   background: rgba(255, 255, 255, 0.05);
+   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+   border-top: 1px solid rgba(255, 255, 255, 0.1);
+   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+   border-radius: 30px;
+   color: #fff;
+   z-index: 1;
+   font-weight: 400;
+   letter-spacing: 1px;
+   text-decoration: none;
+   overflow: hidden;
+   transition: 0.5s;
+
+}
+
+form button:hover{
+letter-spacing: 3px;
+   
+}
+
+
+form button:hover::after{
+ top: 0;
+ height: 50%;
+ width: 80%;
+ border-radius: 30px;
+ transition-delay: 0.5s;
+
+}
+
+
+ form button ::after, button::before{
+    background: #1eff45;
+    box-shadow: 0 0 0 5 #1eff45 0 0 0 15 #1eff45,
+        0 0 0 20 #1eff45,
+        0 0 0 30 #1eff45,
+        0 0 0 60 #1eff45;
+}
+
 
 img {
     display: block;
-     margin: auto;
-    width: 310;
-    height: 310;
+    margin: auto;
+    width: 310px;
+    height: 310px;
     opacity: 1;
-  
+
 }
 
 /* background: #000000;

@@ -27,7 +27,7 @@
 
 
             echo "<div>";
-            echo $newfileName  . "<br><img src='photos/$newfileName ' alt = ' $newfileName'><br>";
+            echo "<img src='photos/$newfileName ' alt = ' $newfileName'><br>";
             echo "<p><strong> Auteur:</strong>" . htmlspecialchars($author) . "</p>";
             echo "<p><strong> Date :</strong> $timestamp</p>";
             echo "</div>";

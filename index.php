@@ -57,9 +57,10 @@
             $date_formatee = $date ? $date->format('d/m/Y H:i:s') : 'Date inconnue';
             // SI j'ai une date je l'affiche gentiment sinon ça affiche date inconnu ? = IF Else en plus court
             echo "<div>";
-            echo $file_name . "<br><img src='photos/$file_name' alt = '$nom_fichier'><br>";
-            echo "<p><strong> Auteur:</strong>" . htmlspecialchars($auteur) . "</p>";
-            echo "<p><strong> Date :</strong>$date_formatee</p>";
+            echo "<img src='photos/$file_name' alt = '$nom_fichier'>";
+            echo "<p><strong> Titre : $nom_fichier</strong></p>";
+            echo "<p><strong> Auteur : </strong>" . htmlspecialchars($auteur) . "</p>";
+            echo "<p><strong> Date : </strong>$date_formatee</p>";
             echo "</div>";
         }
         //    Il veut le format attendu 20250601144419-pierre-chat.png explode coupe ta phrase en petits morceaux

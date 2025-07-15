@@ -55,6 +55,7 @@
         $nom_fichier = $parts[2];
         $date = DateTime::createFromFormat('YmdHis', $timestamp);
         $date_formatee =$date ? $date ->format('d/m/Y H:i:s'): 'Date inconnue';
+        // SI j'ai une date je l'affiche gentiment sinon ça affiche date inconnu ? = IF Else en plus court
         echo "<div>";
         echo "<p><strong> Auteur:</strong>".htmlspecialchars($auteur)."</p>";
         echo "<p><strong> Date :</strong>$date_formatee</p>";

@@ -103,7 +103,23 @@ transition: 0.5s;
 
 form button:hover::before{
 transform: skewX(45deg) translateX(200px);
-}
+} 
+
+/* //jesuisici 7min50*/
+form button ::before{
+content: '';
+position: absolute;
+left: 50%;
+transform: translateX(-50%);
+bottom: -5px;
+width: 30px;
+height: 10px;
+background: red;
+border-radius: 10px;
+transition: 0.5s;
+
+} 
+
 
 form button:hover::after{
  top: 0;

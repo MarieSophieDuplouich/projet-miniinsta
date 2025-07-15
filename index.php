@@ -13,7 +13,7 @@
     <h1>Mini Insta</h1>
     <h2>Ajoutez une photo !</h2>
     <form action="upload-photo.php" method="post" enctype="multipart/form-data">
-        <input type="file" name="picture" required>
+        <input type="file" name="picture" placeholder="Parcourir ..." required>
         <input type="text" name="author" placeholder="votre nom" required>
         <button type="submit">Envoyer</button>
     </form>
@@ -46,22 +46,22 @@
 
     $liste_des_fichiers = lire_dossier();
     foreach ($liste_des_fichiers as $file_name) {
-         $parts = explode ('-', $file_name,3); //[date, auteur, reste du nom]
-        
-        if (count($parts)===3){
+        $parts = explode('-', $file_name, 3); //[date, auteur, reste du nom]
 
-        $timestamp = $parts[0];
-        $auteur = $parts[1];
-        $nom_fichier = $parts[2];
-        $date = DateTime::createFromFormat('YmdHis', $timestamp);
-        $date_formatee =$date ? $date ->format('d/m/Y H:i:s'): 'Date inconnue';
-        // SI j'ai une date je l'affiche gentiment sinon ça affiche date inconnu ? = IF Else en plus court
-        echo "<div>";
-        echo "<p><strong> Auteur:</strong>".htmlspecialchars($auteur)."</p>";
-        echo "<p><strong> Date :</strong>$date_formatee</p>";
-        echo $file_name . "<br><img src='photos/$file_name' alt = '$nom_fichier'><br>";
-        echo "</div>";
-    }
+        if (count($parts) === 3) {
+
+            $timestamp = $parts[0];
+            $auteur = $parts[1];
+            $nom_fichier = $parts[2];
+            $date = DateTime::createFromFormat('YmdHis', $timestamp);
+            $date_formatee = $date ? $date->format('d/m/Y H:i:s') : 'Date inconnue';
+            // SI j'ai une date je l'affiche gentiment sinon ça affiche date inconnu ? = IF Else en plus court
+            echo "<div>";
+            echo $file_name . "<br><img src='photos/$file_name' alt = '$nom_fichier'><br>";
+            echo "<p><strong> Auteur:</strong>" . htmlspecialchars($auteur) . "</p>";
+            echo "<p><strong> Date :</strong>$date_formatee</p>";
+            echo "</div>";
+        }
         //    Il veut le format attendu 20250601144419-pierre-chat.png explode coupe ta phrase en petits morceaux
 
 

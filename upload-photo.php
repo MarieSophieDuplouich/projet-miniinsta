@@ -13,7 +13,7 @@
         $isSuccessful = false;
         // Si le forumlaire à bien soumis un input nommé "picture"
         if (isset($_FILES["picture"]["tmp_name"]) && isset($_POST["author"])) {
-            var_dump($_FILES); // j'affiche les informations du fichier uploadé pour m'aider au débogage
+            // var_dump($_FILES); // j'affiche les informations du fichier uploadé pour m'aider au débogage
             $author = $_POST["author"];
             // Je récupère le chemin temporaire du fichier uploadé
             $chemin_tmp = $_FILES["picture"]["tmp_name"];

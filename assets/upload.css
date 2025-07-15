@@ -8,17 +8,16 @@
 
 body {
     font-family: JejuGothic, sans-serif;
-    background-color: #BE1AC0;
-    background: linear-gradient(180deg, #7C16A4 0%, #FF00B3 100%);
+    background-color: #65DEFF;
+    background: linear-gradient(180deg, #0288ad 0%, #9ecfdd 100%);
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
-
 }
 
 a {
-    color: black;
+    color: aliceblue;
 }
 
 h1 {
@@ -42,7 +41,9 @@ h2 {
 
 form {
     background-color: #E379CC;
-  
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 input {
@@ -55,13 +56,12 @@ input {
 }
 
 img {
-    display: block;
-     margin: auto;
     width: 310;
     height: 310;
     opacity: 1;
-  
+   
 }
+
 
 /* background: #000000;
 background: #FFFFFF;

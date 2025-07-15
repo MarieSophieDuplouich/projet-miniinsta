@@ -55,10 +55,10 @@
         $nom_fichier = $parts[2];
         $date = DateTime::createFromFormat('YmdHis', $timestamp);
         $date_formatee =$date ? $date ->format('d/m/Y H:i:s'): 'Date inconnue';
-        echo "<div style='margin-bottom:20px;'>";
+        echo "<div>";
         echo "<p><strong> Auteur:</strong>".htmlspecialchars($auteur)."</p>";
         echo "<p><strong> Date :</strong>$date_formatee</p>";
-        echo $file_name . "<br><img src='photos/$file_name' alt = '$nom_fichier'style='max-width:300px;'><br>";
+        echo $file_name . "<br><img src='photos/$file_name' alt = '$nom_fichier'><br>";
         echo "</div>";
     }
         //    Il veut le format attendu 20250601144419-pierre-chat.png explode coupe ta phrase en petits morceaux

@@ -1,9 +1,13 @@
-    <?php
-
-
-    require 'index.php';// dois-je mettre ceci ???
-
-
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Upload</title>
+        <link rel="stylesheet" href="assets/upload.css">
+    </head>
+    <body>
+         <?php
     $isSuccessful = false;
     // Si le forumlaire à bien soumis un input nommé "picture"
     if (isset($_FILES["picture"]["tmp_name"]) && isset($_POST["author"])) {
@@ -23,10 +27,10 @@
     ?>
 
     <?php if ($isSuccessful == true) : ?>
-        <h1>Upload Success ! </h1>
+        <h1>Upload Réussi ! </h1>
     <?php else : ?>
 
-        <h1>Upload Failed ! </h1>
+        <h1>Upload échoué ! </h1>
     <?php endif; ?>
 
 
@@ -48,3 +52,7 @@ $_FILES ["picture"]["type"]
 $_FILES ["picture"]["size"]
 $_FILES ["picture"]["author"]
 $_FILES ["picture"]["date"] -->
+    </body>
+    </html>
+    
+   

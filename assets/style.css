@@ -88,6 +88,22 @@ letter-spacing: 3px;
    
 }
 
+form button::before{
+content: '';
+position: absolute;
+top:0;
+left:0;
+width: 50%;
+height: 100%;
+background: linear-gradient(to left, rgba(255,255,255,0.15),transparent);
+transform: skewX(45deg) translateX(0);
+transition: 0.5s;
+}
+
+
+form button:hover::before{
+transform: skewX(45deg) translateX(200px);
+}
 
 form button:hover::after{
  top: 0;

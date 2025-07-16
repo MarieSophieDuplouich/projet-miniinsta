@@ -1,4 +1,6 @@
-    <!DOCTYPE html>
+   //mettre ici php
+   
+   <!DOCTYPE html>
     <html lang="en">
 
     <head>

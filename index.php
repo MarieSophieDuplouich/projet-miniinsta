@@ -1,3 +1,5 @@
+
+//mettre php ici et les echoi au bon endroit
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -16,6 +18,8 @@
         <input type="file" name="picture" placeholder="Parcourir ..." required>
         <input type="text" name="author" placeholder="votre nom" required>
         <button type="submit">Envoyer</button>
+         <div class="container"><div class="btn"><a href="#">Read more</a></div>
+    </div>
     </form>
     <hr>
     <h2>Galerie</h2>

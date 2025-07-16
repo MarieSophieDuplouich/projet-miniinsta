@@ -1,17 +1,17 @@
    //mettre ici php
-   
+
    <!DOCTYPE html>
-    <html lang="en">
+   <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Upload</title>
-        <link rel="stylesheet" href="assets/upload.css">
-    </head>
+   <head>
+       <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <title>Upload</title>
+       <link rel="stylesheet" href="assets/upload.css">
+   </head>
 
-    <body>
-        <?php
+   <body>
+       <?php
         $isSuccessful = false;
         // Si le forumlaire à bien soumis un input nommé "picture"
         if (isset($_FILES["picture"]["tmp_name"]) && isset($_POST["author"])) {
@@ -37,32 +37,35 @@
 
         ?>
 
-        <?php if ($isSuccessful == true) : ?>
-            <h1>Upload Réussi ! </h1>
-        <?php else : ?>
+       <?php if ($isSuccessful == true) : ?>
+           <h1>Upload Réussi ! </h1>
+       <?php else : ?>
 
-            <h1>Upload échoué ! </h1>
-        <?php endif; ?>
+           <h1>Upload échoué ! </h1>
+       <?php endif; ?>
 
 
-        <a href="/">Retour à la page d'accueil</a>
+       <div class="container">
+           <div class="btn"><a href="/">Accueil</a></div>
+       </div>
 
-        <?php $photos_dir = opendir("photos"); ?>
 
-        <?php $photos_dir = opendir("photos");
+       <?php $photos_dir = opendir("photos"); ?>
+
+       <?php $photos_dir = opendir("photos");
         $file_name = readdir($photos_dir); // Premier fichier
         echo $file_name . "test<br>";
         $file_name = readdir($photos_dir); // Deuxième fichier
         echo $file_name . "test<br>"; ?>
 
 
-        <!-- écrire ici post et voir page 158 lire cours la lecture du dossier -->
+       <!-- écrire ici post et voir page 158 lire cours la lecture du dossier -->
 
-        <!-- $_FILES ["picture"]["tmp_name"]
+       <!-- $_FILES ["picture"]["tmp_name"]
 $_FILES ["picture"]["type"]
 $_FILES ["picture"]["size"]
 $_FILES ["picture"]["author"]
 $_FILES ["picture"]["date"] -->
-    </body>
+   </body>
 
-    </html>
+   </html>

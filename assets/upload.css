@@ -98,7 +98,7 @@ img {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 30px;
-    color: #01b7b4;
+    color: #fff;
     z-index: 1;
     font-weight: 400;
     letter-spacing: 1px;
@@ -181,10 +181,10 @@ img {
 
 .container .btn::before,
 .container .btn::after {
-    background: #02838d;
-    box-shadow: 0 0 5px #02838d,
-        0 0 15px #02838d,
-        0 0 30px   #02838d,
-        0 0 60px   #02838d;
+    background: #1eff45;
+    box-shadow: 0 0 5px #1eff45,
+        0 0 15px #1eff45,
+        0 0 30px   #1eff45,
+        0 0 60px   #1eff45;
 }
 

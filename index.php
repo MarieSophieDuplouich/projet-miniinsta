@@ -17,8 +17,7 @@
     <form action="upload-photo.php" method="post" enctype="multipart/form-data">
         <input type="file" name="picture" placeholder="Parcourir ..." required>
         <input type="text" name="author" placeholder="votre nom" required>
-        <button type="submit">Envoyer</button>
-         <div class="container"><div class="btn"><a href="#">Read more</a></div>
+        <div class="container"><div class="btn"><button type="submit">Envoyer</button></div>
     </div>
     </form>
     <hr>

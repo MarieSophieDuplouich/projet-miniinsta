@@ -46,6 +46,23 @@ foreach ($liste_src as $file_name) {
 
 
 }
+
+$ghosts = ['https://www.youtube.com/embed/VejFr5tkSgU?start=606&end=609&autoplay=1&mute=1&controls=0&modestbranding=1&rel=0',
+
+    'https://www.youtube.com/embed/DEZWY-BWskY?start=250&end=251&autoplay=1&mute=1&controls=0&modestbranding=1&rel=0'
+    ];
+function Jumpscare{
+
+while ($a <= 10) {
+    # code..
+}
+
+else{
+
+
+}
+
+}
 ?>
 
 
@@ -70,10 +87,7 @@ foreach ($liste_src as $file_name) {
             <div class="btn"><button type="submit">Envoyer</button></div>
         </div>
     </form>
-    <hr>
     <h2>Galerie I'm not a Human</h2>
-    ///ici
-
     <?php foreach ($fichiers as $fichier): ?> 
             <div class="container-image">
                 <img src="photos/<?= htmlspecialchars($fichier["image"]) ?>" alt='<?= htmlspecialchars($fichier["name"]) ?>'>
@@ -108,3 +122,15 @@ $file_author= ['fichier']['author'];
 
 <!-- echo filesize("test.txt");
 echo filetype("test.txt"); -->
+
+<!-- poser question massi Je veux des extraits jumpsscare que je vais appeler ghost 
+je vais faire untableau aevc les liens urls html des extraits de jumpsscare de I'm not a human
+bref en php
+
+Dès que l'utilisateur entre dans ma page web le fantôme apparaît quelques secondes et après il disparaît 
+
+
+
+Tant que utilisateur ne rentre pas dans mon site web, le fantôme n'apparaît pas 
+sinon il apparaît
+-->

@@ -194,6 +194,8 @@ img {
 @media only screen and (max-width: 600px) {
 nav ul li{
     text-decoration: none;
+    list-style-type: none;
+
 }
 ul{
     display: grid;
@@ -209,6 +211,7 @@ nav ul li a img {
     height: 78px;
 }
 
+
 .container{
     display:none;
 }
@@ -218,7 +221,9 @@ nav ul li a img {
 @media only screen and (min-width: 600px) {
 nav{
     display: none;
+    
 }
+
 
 }
 

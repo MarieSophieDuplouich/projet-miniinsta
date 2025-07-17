@@ -21,24 +21,26 @@ function lire_dossier()
     return $file_names;
 }
 
-$liste_des_fichiers = lire_dossier();
-foreach ($liste_des_fichiers as $file_name) {
+
+
+$liste_src = lire_dossier();
+//attention ici il faut regarder
+$fichiers = [];
+
+foreach ($liste_src as $file_name) {
+    $fichier = [];
     $parts = explode('-', $file_name, 3); //[date, auteur, reste du nom]
 
     if (count($parts) === 3) {
 
-        $timestamp = $parts[0];
-        $auteur = $parts[1];
-        $nom_fichier = $parts[2];
-        $date = DateTime::createFromFormat('YmdHis', $timestamp);
-        $date_formatee = $date ? $date->format('d/m/Y H:i:s') : 'Date inconnue';
-        // SI j'ai une date je l'affiche gentiment sinon ça affiche date inconnu ? = IF Else en plus court
-        // echo "<div >";
-        // echo "<img src='photos/$file_name' alt = '$nom_fichier'>";
-        // echo "<p><strong> Titre : $nom_fichier</strong></p>";
-        // echo "<p><strong> Auteur : </strong>" . htmlspecialchars($auteur) . "</p>";
-        // echo "<p><strong> Date : </strong>$date_formatee</p>";
-        // echo "</div>";
+        $fichier["timestamp"] = $parts[0];
+        $fichier["auteur"] = $parts[1];
+        $fichier["name"] = $parts[2];
+        $fichier["date"] = DateTime::createFromFormat('YmdHis',  $fichier['timestamp']);
+        $fichier ["date_formatee"]= $fichier["date"] ? $fichier["date"] ->format('d/m/Y H:i:s') : 'Date inconnue';
+        $fichier["image"] = $file_name;
+
+        $fichiers[] = $fichier;
     }
     //    Il veut le format attendu 20250601144419-pierre-chat.png explode coupe ta phrase en petits morceaux
 
@@ -72,13 +74,12 @@ foreach ($liste_des_fichiers as $file_name) {
     <h2>Galerie I'm not a Human</h2>
     ///ici
 
-    <?php foreach ($liste_des_fichiers as $file_name): ?>
-        <div class="galerie">
+    <?php foreach ($fichiers as $fichier): ?> 
             <div class="container-image">
-                <img src="photos/<?= $file_name ?>" alt='$nom_fichier'>
-                <p><strong> Titre :<?= $nom_fichier ?> </strong></p>
-                <p><strong> Auteur : </strong> <?= htmlspecialchars($auteur) ?></p>
-                <p><strong> Date : </strong><?= $date_formatee ?></p>
+                <img src="photos/<?= htmlspecialchars($fichier["image"]) ?>" alt='<?= htmlspecialchars($fichier["name"]) ?>'>
+                <p><strong> Titre :<?= htmlspecialchars($fichier["name"]) ?> </strong></p>
+                <p><strong> Auteur : </strong> <?= htmlspecialchars($fichier["auteur"]) ?></p>
+                <p><strong> Date : </strong><?=  $fichier ["date_formatee"]?></p>
             </div>
 
         </div>
@@ -91,6 +92,7 @@ foreach ($liste_des_fichiers as $file_name) {
                 <li><a href="contact.asp"><img src="./assets/Envoyer.svg" alt="Envoyer"></a></li>
             </ul>
         </nav>
+        <audio src=""></audio>
     </footer>
 
 

@@ -1,17 +1,5 @@
-   //mettre ici php
 
-   <!DOCTYPE html>
-   <html lang="en">
-
-   <head>
-       <meta charset="UTF-8">
-       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-       <title>Upload</title>
-       <link rel="stylesheet" href="assets/upload.css">
-   </head>
-
-   <body>
-       <?php
+ <?php
         $isSuccessful = false;
         // Si le forumlaire à bien soumis un input nommé "picture"
         if (isset($_FILES["picture"]["tmp_name"]) && isset($_POST["author"])) {
@@ -26,13 +14,7 @@
 
             // A l'aide du chemin temporaire, je déplace le fichier vers le dossier "photos/" avec le nom du fichier uploadé
             $isSuccessful = move_uploaded_file($chemin_tmp, "photos/" .  $newfileName);
-
-
-            echo "<div>";
-            echo "<img src='photos/$newfileName ' alt = ' $newfileName'><br>";
-            echo "<p><strong> Auteur:</strong>" . htmlspecialchars($author) . "</p>";
-            echo "<p><strong> Date :</strong> $timestamp</p>";
-            echo "</div>";
+ 
         }
 
         ?>
@@ -58,6 +40,37 @@
         $file_name = readdir($photos_dir); // Deuxième fichier
         echo $file_name . "test<br>"; ?>
 
+
+   <!DOCTYPE html>
+   <html lang="en">
+
+   <head>
+       <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <title>Upload</title>
+       <link rel="stylesheet" href="assets/upload.css">
+   </head>
+
+   <body>
+      
+   <?php 
+            echo "<div>";
+            echo "<img src='photos/$newfileName ' alt = ' $newfileName'><br>";
+            echo "<p><strong> Auteur:</strong>" . htmlspecialchars($author) . "</p>";
+            echo "<p><strong> Date :</strong> $timestamp</p>";
+            echo "</div>"; 
+            ?>
+
+
+ <footer>
+        <nav>
+            <ul>
+                <li><a href="index.php"><img src="./assets/Accueil.svg" alt="Accueil"></a></li>
+                <li><a href="news.asp"><img src="./assets/Ajouter.svg" alt="Ajouter"></a></li>
+                <li><a href="contact.asp"><img src="./assets/Envoyer.svg" alt="Envoyer"></a></li>
+            </ul>
+        </nav>
+    </footer>
    </body>
 
    </html>

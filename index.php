@@ -75,22 +75,24 @@ foreach ($liste_des_fichiers as $file_name) {
     <?php foreach ($liste_des_fichiers as $file_name): ?>
         <div class="galerie">
             <div class="container-image">
-             <img src="photos/<?= $file_name ?>" alt='$nom_fichier'>
-            <p><strong> Titre :<?= $nom_fichier ?> </strong></p>
-            <p><strong> Auteur : </strong> <?= htmlspecialchars($auteur) ?></p>
-            <p><strong> Date : </strong><?= $date_formatee ?></p>
+                <img src="photos/<?= $file_name ?>" alt='$nom_fichier'>
+                <p><strong> Titre :<?= $nom_fichier ?> </strong></p>
+                <p><strong> Auteur : </strong> <?= htmlspecialchars($auteur) ?></p>
+                <p><strong> Date : </strong><?= $date_formatee ?></p>
             </div>
-            
+
         </div>
     <?php endforeach; ?>
+    <footer>
+        <nav>
+            <ul>
+                <li><a href="index.php"><img src="./assets/Accueil.svg" alt="Accueil"></a></li>
+                <li><a href="news.asp"><img src="./assets/Ajouter.svg" alt="Ajouter"></a></li>
+                <li><a href="contact.asp"><img src="./assets/Envoyer.svg" alt="Envoyer"></a></li>
+            </ul>
+        </nav>
+    </footer>
 
-    <nav>
-        <ul>
-            <li><a href="index.php"><img src="./assets/Accueil.svg" alt="Accueil"></a></li>
-            <li><a href="news.asp"><img src="./assets/Ajouter.svg" alt="Ajouter"></a></li>
-            <li><a href="contact.asp"><img src="./assets/Envoyer.svg" alt="Envoyer"></a></li>
-        </ul>
-    </nav>
 
 </body>
 

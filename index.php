@@ -47,22 +47,36 @@ foreach ($liste_src as $file_name) {
 
 }
 
-$ghosts = ['https://www.youtube.com/embed/VejFr5tkSgU?start=606&end=609&autoplay=1&mute=1&controls=0&modestbranding=1&rel=0',
 
-    'https://www.youtube.com/embed/DEZWY-BWskY?start=250&end=251&autoplay=1&mute=1&controls=0&modestbranding=1&rel=0'
-    ];
-function Jumpscare{
-
-while ($a <= 10) {
-    # code..
-}
-
-else{
+// poser question massi Je veux des extraits jumpsscare que je vais appeler ghost
+//je vais faire untableau aevc les liens urls html des extraits de jumpsscare de I'm not a human
+//bref en php//Dès que l'utilisateur entre dans ma page web le fantôme apparaît quelques secondes et après il disparaît
+//Tant que utilisateur ne rentre pas dans mon site web, le fantôme n'apparaît pas
+//sinon il apparaît//
 
 
-}
+// $ghosts = ['https://www.youtube.com/embed/VejFr5tkSgU?start=606&end=609&autoplay=1&mute=1&controls=0&modestbranding=1&rel=0',
 
-}
+//     'https://www.youtube.com/embed/DEZWY-BWskY?start=250&end=251&autoplay=1&mute=1&controls=0&modestbranding=1&rel=0'
+//     ];
+
+// $user = "comment le définir ici?";
+
+// function Jumpscare{
+
+// if (isset($user => click on index.php)) {
+
+//    echo  "$user see".rand($ghosts). " during 5 secondes";
+//     # code...
+// }
+
+// else {
+//    echo "$ghosts n'apparaît pas";
+// }
+
+// }
+
+// Jumpscare();
 ?>
 
 
@@ -77,6 +91,9 @@ else{
 </head>
 
 <body>
+
+
+<iframe src="" frameborder="0"></iframe>
     <!-- mettre le label pour l'input -->
     <h1>Mini Insta</h1>
     <h2>Ajoutez une photo !</h2>
@@ -88,7 +105,7 @@ else{
         </div>
     </form>
     <h2>Galerie I'm not a Human</h2>
-    <?php foreach ($fichiers as $fichier): ?> 
+    <?php foreach ($fichiers as $fichier): ?>
             <div class="container-image">
                 <img src="photos/<?= htmlspecialchars($fichier["image"]) ?>" alt='<?= htmlspecialchars($fichier["name"]) ?>'>
                 <p><strong> Titre :<?= htmlspecialchars($fichier["name"]) ?> </strong></p>
@@ -113,7 +130,7 @@ else{
 </body>
 
 </html>
-<!-- 
+<!--
   echo "<pre>";
 var_dump($file_names);
 echo "</pre>";
@@ -123,14 +140,3 @@ $file_author= ['fichier']['author'];
 <!-- echo filesize("test.txt");
 echo filetype("test.txt"); -->
 
-<!-- poser question massi Je veux des extraits jumpsscare que je vais appeler ghost 
-je vais faire untableau aevc les liens urls html des extraits de jumpsscare de I'm not a human
-bref en php
-
-Dès que l'utilisateur entre dans ma page web le fantôme apparaît quelques secondes et après il disparaît 
-
-
-
-Tant que utilisateur ne rentre pas dans mon site web, le fantôme n'apparaît pas 
-sinon il apparaît
--->

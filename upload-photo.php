@@ -58,14 +58,6 @@
         $file_name = readdir($photos_dir); // Deuxième fichier
         echo $file_name . "test<br>"; ?>
 
-
-       <!-- écrire ici post et voir page 158 lire cours la lecture du dossier -->
-
-       <!-- $_FILES ["picture"]["tmp_name"]
-$_FILES ["picture"]["type"]
-$_FILES ["picture"]["size"]
-$_FILES ["picture"]["author"]
-$_FILES ["picture"]["date"] -->
    </body>
 
    </html>

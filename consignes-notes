@@ -48,3 +48,13 @@ Tâches	Description	Contraintes
 Page d'accueil	Afficher les photos publiées par les utilisateurs	Utiliser readdir() pour lire le dossier des photos et une boucle foreach pour l'affichage
 Upload de photos	Permettre aux utilisateurs de publier des photos via un formulaire comportant deux champs : auteur et fichier	Utiliser un formulaire HTML de type multipart/form-data pour envoyer les photos à un script serveur
 Convention de nommage des fichiers uploadés	Les fichiers doivent être nommés selon le format date-auteur-filename.extension	Exemple : 20250601144419-pierre-chat.png pour une photo de chat postée par Pierre le 01/06/2025 à 14h44m19s
+
+
+ // le formateur nous a montré ça hier
+    <div class="grid-container">
+        <?php foreach ($src_images as $src): ?>
+            <?php var_dump($src_images); ?>
+            <img src="<?= $src ?>" alt="">
+        <?php endforeach; ?> //
+
+    </div>

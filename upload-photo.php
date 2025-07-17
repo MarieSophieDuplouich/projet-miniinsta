@@ -36,7 +36,7 @@
 
        <?php $photos_dir = opendir("photos");
         $file_name = readdir($photos_dir); // Premier fichier
-        echo $file_name . "test<br>";
+        echo $file_name;
         $file_name = readdir($photos_dir); // Deuxième fichier
         echo $file_name; ?>
 

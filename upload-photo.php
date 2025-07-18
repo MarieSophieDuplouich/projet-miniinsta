@@ -77,7 +77,8 @@
    </head>
 
    <body>
-      
+        <img  class="pub"    src="assets/pub-imnotahuman-check.webp" alt="pub imnotahuman check" >
+
    <?php 
             echo "<div>";
             echo "<img src='photos/$newfileName ' alt = ' $newfileName'><br>";
@@ -95,7 +96,6 @@
             </div>
 
     <?php endforeach; ?>
-  <img  class="pub"    src="assets/pub-imnotahuman-check.webp" alt="pub imnotahuman check" >
  <footer>
         <nav>
             <ul>

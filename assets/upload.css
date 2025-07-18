@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* border: black 1px solid; */
+    border: black 1px solid;
     color: #FFFFFF;
 }
 
@@ -181,14 +181,14 @@ img {
 
 .container .btn::before,
 .container .btn::after {
-    background: #1eff45;
-    box-shadow: 0 0 5px #1eff45,
-        0 0 15px #1eff45,
-        0 0 30px   #1eff45,
-        0 0 60px   #1eff45;
+    background: #78cb6e;
+    box-shadow: 0 0 5px #78cb6e,
+        0 0 15px #78cb6e,
+        0 0 30px   #78cb6e,
+        0 0 60px   #78cb6e;
 }
 
-.pub{
+.pub, .pub-Enerjeka{
 
     width: 100%;
     height: auto;

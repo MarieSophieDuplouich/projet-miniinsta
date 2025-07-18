@@ -93,7 +93,7 @@ foreach ($liste_src as $file_name) {
 <body>
 
 
-<iframe src="" frameborder="0"></iframe>
+<!-- <iframe src="" frameborder="0"></iframe> -->
     <!-- mettre le label pour l'input -->
     <h1>Mini Insta</h1>
     <h2>Ajoutez une photo !</h2>

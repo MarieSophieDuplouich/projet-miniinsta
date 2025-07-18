@@ -58,3 +58,12 @@ Convention de nommage des fichiers uploadés	Les fichiers doivent être nommés 
         <?php endforeach; ?> //
 
     </div>
+
+    <!-- input mettre un id label pour envoyer et pour parcourir ton id css display none pour le supprimer -->
+ <!-- foreach possible -->
+  <!-- comment détecter une entrée d'un visiteur sur un site en php -->
+ <!-- j compris entre 1 et 2 0 et 1 rand de 1 attribuer un chiffre au hasard à tes phantomes rand sur 2 un jet de dé attribuer un numéro de phantôme-->
+ <!-- count part y avait plus simple "strpos" ça cherche la première occurence d'un mot dans un texte
+ je suis marie je veux la première occurence où il y a un je essayer de détecter où tu as ton auteur etc... et ensuite on prend la donnée ex date auteur nom de fichier strpos sur la date l'auteur et nom de fichier -->
+ 
+ 

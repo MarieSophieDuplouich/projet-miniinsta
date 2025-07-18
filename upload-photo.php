@@ -1,21 +1,46 @@
 
- <?php
-        $isSuccessful = false;
+<?php
+
+         // ancien code
+        // $isSuccessful = false;
+        // // Si le forumlaire à bien soumis un input nommé "picture"
+        // if (isset($_FILES["picture"]["tmp_name"]) && isset($_POST["author"])) {
+        //     // var_dump($_FILES); // j'affiche les informations du fichier uploadé pour m'aider au débogage
+        //     $author = $_POST["author"];
+        //     // Je récupère le chemin temporaire du fichier uploadé
+        //     $chemin_tmp = $_FILES["picture"]["tmp_name"];
+        //     $originalName = $_FILES["picture"]["name"];
+        //     $timestamp = date("YmdHis");
+
+        //     $newfileName =  $timestamp . '-' . $author . '-' . $originalName;
+
+        //     // A l'aide du chemin temporaire, je déplace le fichier vers le dossier "photos/" avec le nom du fichier uploadé
+        //     $isSuccessful = move_uploaded_file($chemin_tmp, "photos/" .  $newfileName);
+ 
+        // }
+
+
+       $fichiers = [];
+       $isSuccessful = false;
         // Si le forumlaire à bien soumis un input nommé "picture"
         if (isset($_FILES["picture"]["tmp_name"]) && isset($_POST["author"])) {
             // var_dump($_FILES); // j'affiche les informations du fichier uploadé pour m'aider au débogage
-            $author = $_POST["author"];
+            
+            $fichier = [];
+            $fichier["author"] = $_POST["author"];
             // Je récupère le chemin temporaire du fichier uploadé
-            $chemin_tmp = $_FILES["picture"]["tmp_name"];
-            $originalName = $_FILES["picture"]["name"];
-            $timestamp = date("YmdHis");
+            $fichier["chemin_tmp"] = $_FILES["picture"]["tmp_name"];
+            $fichier["originalName"]  = $_FILES["picture"]["name"];
+            $fichier["timestamp"] = date("YmdHis");
 
-            $newfileName =  $timestamp . '-' . $author . '-' . $originalName;
-
+            $fichier =  $fichier["timestamp"]  . '-' .  $fichier["author"]. '-' . $fichier["originalName"];
+            $fichiers[] = $fichier;
             // A l'aide du chemin temporaire, je déplace le fichier vers le dossier "photos/" avec le nom du fichier uploadé
-            $isSuccessful = move_uploaded_file($chemin_tmp, "photos/" .  $newfileName);
+            $isSuccessful = move_uploaded_file($fichier["chemin_tmp"], "photos/" .  $fichier["newfileName"]);
  
         }
+
+
 
         ?>
 
@@ -58,9 +83,18 @@
             echo "<img src='photos/$newfileName ' alt = ' $newfileName'><br>";
             echo "<p><strong> Auteur:</strong>" . htmlspecialchars($author) . "</p>";
             echo "<p><strong> Date :</strong> $timestamp</p>";
-            echo "</div>"; 
+            echo "</div>"; //ancien code
             ?>
 
+          <?php foreach ($fichiers as $fichier): ?>
+            <!-- ce que je veux -->
+            <div class="container-image">
+                <img src="photos/<?= htmlspecialchars($fichier["newfileName"]) ?>" alt='<?= htmlspecialchars($fichier["newfileName"]) ?>'>
+                <p><strong> Auteur : </strong> <?= htmlspecialchars($fichier["author"]) ?></p>
+                <p><strong> Date : </strong><?=  $fichier ["timestamp"]?></p> 
+            </div>
+
+    <?php endforeach; ?>
 
  <footer>
         <nav>

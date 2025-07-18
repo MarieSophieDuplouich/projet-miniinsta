@@ -98,7 +98,7 @@ foreach ($liste_src as $file_name) {
     <!-- input mettre un id label pour envoyer et pour parcourir 
        ton id css display none pour le supprimer -->
     <h1>Mini Insta</h1>
-    <img  class="pub-Enerjeka"    src="assets/EnerJeka_imnotahuman.webp" alt="pub imnotahuman check" >
+        <img  class="pub"    src="assets/door-imnotahuman.gif " alt="pub imnotahuman door" >
 
     <h2>Ajoutez une photo !</h2>
     <form action="upload-photo.php" method="post" enctype="multipart/form-data">

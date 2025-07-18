@@ -10,14 +10,18 @@ body {
     font-family: JejuGothic, sans-serif;
     background-color: #BE1AC0;
     background: linear-gradient(180deg, #7C16A4 0%, #FF00B3 100%);
-   
+    cursor: grab;
 
 }
 
 a {
     color: black;
 }
-button { background-color: aqua;}
+
+button {
+    background-color: aqua;
+}
+
 h1 {
     font-weight: 400;
     font-size: 29px;
@@ -25,6 +29,8 @@ h1 {
     letter-spacing: 39%;
     text-align: center;
     vertical-align: middle;
+    margin-top: 30px;
+    margin-bottom: 30px;
 
 }
 
@@ -35,23 +41,26 @@ h2 {
     letter-spacing: 12%;
     text-align: center;
     vertical-align: middle;
+    margin-top: 30px;
 }
 
 
 input {
     background-color: #fff;
     color: Black;
-    width: 334;
-    height: 70;
-    opacity: 1;
-    top: 165px;
-    left: 30px;
+    top: 300px;
+    left: 60px;
+    width: 310px;
+    text-align: center;
 
 }
 
-label{
+label {
+    margin-left: 30px;
     background-color: #fff;
     color: black;
+    width: 200px;
+    text-align: center;
 }
 
 img {
@@ -66,14 +75,14 @@ img {
 
 /* bouton envoyer  */
 
-.container {  
+.container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
 }
 
 
-.container .btn{
+.container .btn {
 
     position: relative;
     width: 155px;
@@ -119,6 +128,7 @@ img {
     left: 0;
     width: 50%;
     height: 100%;
+    background-color: rgb(124, 22, 164);
     background: linear-gradient(to left, rgba(255, 255, 255, 0.15), transparent);
     transform: skewX(45deg) translateX(0);
     transition: 0.5s;
@@ -138,7 +148,7 @@ img {
     bottom: -5px;
     width: 30px;
     height: 10px;
-    background: red;
+    background: #7C16A4;
     border-radius: 10px;
     transition: 0.5s;
     transition-delay: 0s;
@@ -162,7 +172,7 @@ img {
     top: -5px;
     width: 30px;
     height: 10px;
-    background: red;
+    background: #7C16A4;
     border-radius: 10px;
     transition: 0.5s;
     transition-delay: 0s;
@@ -182,29 +192,33 @@ img {
 .container .btn::after {
     background: #fff;
     box-shadow: 0 0 5px #01b7b4,
-        0 0 15px  #01b7b4,
-        0 0 30px   #01b7b4,
-        0 0 60px   #01b7b4;
+        0 0 15px #01b7b4,
+        0 0 30px #01b7b4,
+        0 0 60px #01b7b4;
 }
 
 /* .galerie{
 
 } */
 
-.container-image{
+.container-image {
 
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    margin-top: 30px;
 }
-form{
-    background-color: #FF00B3;
+
+form {
+    margin: 50px;
+    background-color: #E379CC;
     display: grid;
-    grid-template-columns: repeat(4,1fr);
-    flex-wrap: wrap;
+    grid-template-columns: repeat(3, 1fr);
+    flex-wrap: nowrap;
     align-items: center;
     gap: 5px;
+    
 }
 
 /* media queries */
@@ -212,54 +226,51 @@ form{
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
-nav ul li{
-    text-decoration: none;
-     list-style-type: none;
-}
-ul{
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    flex-wrap: nowrap;
-    align-items: center;
-    gap: 30px;
-}
+    nav ul li {
+        text-decoration: none;
+        list-style-type: none;
+    }
+
+    ul {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        flex-wrap: nowrap;
+        align-items: center;
+        gap: 30px;
+    }
 
 
-nav ul li a img {
-    width: 78px;
-    height: 78px;
-}
+    nav ul li a img {
+        width: 78px;
+        height: 78px;
+    }
 
-form{
-    display:none;
-}
+    form {
+        display: none;
+    }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
-nav{
-    display: none;
-}
+    nav {
+        display: none;
+    }
 
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
-.container {  
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-}
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+    }
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {
-
-}
+@media only screen and (min-width: 992px) {}
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
-
-}
+@media only screen and (min-width: 1200px) {}

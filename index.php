@@ -101,10 +101,10 @@ foreach ($liste_src as $file_name) {
     <h2>Ajoutez une photo !</h2>
     <form action="upload-photo.php" method="post" enctype="multipart/form-data">
 
-        <label type="file" name="picture" class="" id="parcourir" for="inputquiposeprobleme"> Parcourir</label>
+        <label type="file" name="picture" class="parcours" id="parcourir" for="inputquiposeprobleme"> Parcourir</label>
         <input id="inputquiposeprobleme" type="file" name="picture" placeholder="Parcourir ..." required hidden>
 
-        <input type="text" name="author" placeholder="votre nom" required>
+        <input class="nom" type="text" name="author" placeholder="votre nom" required>
 
         <div class="container">
             <!-- <label class="btn" for="inputquiposeprobleme" type="submit" value="Submit">Envoyer uuuuuuu</label> -->

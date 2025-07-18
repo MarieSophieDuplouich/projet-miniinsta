@@ -13,7 +13,12 @@ body {
     cursor: grab;
 
 }
+.pub-Enerjeka{
 
+    width: 300px;
+    height: auto;
+    margin-bottom: 30px;
+}
 a {
     color: black;
 }

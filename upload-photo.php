@@ -95,7 +95,6 @@
                 <p><strong> Date : </strong><?=  $fichier ["timestamp"]?></p> 
             </div>
     <?php endforeach; ?>
-            <img  class="pub-Enerjeka"    src="assets/EnerJeka_imnotahuman.webp" alt="pub imnotahuman Enerjeka" >
 
  <footer>
         <nav>

@@ -17,7 +17,7 @@ body {
 a {
     color: black;
 }
-
+button { background-color: aqua;}
 h1 {
     font-weight: 400;
     font-size: 29px;
@@ -39,8 +39,8 @@ h2 {
 
 
 input {
-    
-    color: black;
+    background-color: #01b7b4;
+    color: Black;
     width: 334;
     height: 70;
     opacity: 1;
@@ -48,7 +48,13 @@ input {
     left: 30px;
 
 }
+/* #inputquiposeprobleme{
+    display: none;
+} */
 
+label{
+    background-color: #FF00B3;
+}
 
 img {
     display: block;
@@ -194,10 +200,10 @@ img {
 }
 form{
     display: grid;
-    grid-template-columns: repeat(3,1fr);
-    flex-wrap: nowrap;
+    grid-template-columns: repeat(4,1fr);
+    flex-wrap: wrap;
     align-items: center;
-    gap: 40px;
+    gap: 5px;
 }
 
 /* media queries */

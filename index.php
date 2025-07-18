@@ -37,7 +37,7 @@ foreach ($liste_src as $file_name) {
         $fichier["auteur"] = $parts[1];
         $fichier["name"] = $parts[2];
         $fichier["date"] = DateTime::createFromFormat('YmdHis',  $fichier['timestamp']);
-        $fichier ["date_formatee"]= $fichier["date"] ? $fichier["date"] ->format('d/m/Y H:i:s') : 'Date inconnue';
+        $fichier["date_formatee"] = $fichier["date"] ? $fichier["date"]->format('d/m/Y H:i:s') : 'Date inconnue';
         $fichier["image"] = $file_name;
 
         $fichiers[] = $fichier;
@@ -60,9 +60,9 @@ foreach ($liste_src as $file_name) {
 //     'https://www.youtube.com/embed/DEZWY-BWskY?start=250&end=251&autoplay=1&mute=1&controls=0&modestbranding=1&rel=0'
 //     ];
 
-// $user = "comment le définir ici?";
+// $user = "comment le définir ici?"; //session
 
-// function Jumpscare{
+// function Jumpscare(){
 
 // if (isset($user => click on index.php)) {
 
@@ -93,25 +93,36 @@ foreach ($liste_src as $file_name) {
 <body>
 
 
-<!-- <iframe src="" frameborder="0"></iframe> -->
+    <!-- <iframe src="" frameborder="0"></iframe> -->
     <!-- mettre le label pour l'input -->
+    <!-- input mettre un id label pour envoyer et pour parcourir 
+       ton id css display none pour le supprimer -->
     <h1>Mini Insta</h1>
     <h2>Ajoutez une photo !</h2>
     <form action="upload-photo.php" method="post" enctype="multipart/form-data">
-        <input type="file" name="picture" placeholder="Parcourir ..." required>
+
+        <label type="file" name="picture" class="" id="parcourir" for="inputquiposeprobleme"> Parcourirrrrr</label>
+        <input id="inputquiposeprobleme" type="file" name="picture" placeholder="Parcourir ..." required hidden>
+
         <input type="text" name="author" placeholder="votre nom" required>
+
         <div class="container">
-            <div class="btn"><button type="submit">Envoyer</button></div>
+            <!-- <label class="btn" for="inputquiposeprobleme" type="submit" value="Submit">Envoyer uuuuuuu</label> -->
+            <!-- le beau bouton -->
+            <div class="btn"><button type="submit" value="Submit">Envoyer</button></div>
         </div>
+        <!-- le beau bouton -->
     </form>
+
+
     <h2>Galerie I'm not a Human</h2>
     <?php foreach ($fichiers as $fichier): ?>
-            <div class="container-image">
-                <img src="photos/<?= htmlspecialchars($fichier["image"]) ?>" alt='<?= htmlspecialchars($fichier["name"]) ?>'>
-                <p><strong> Titre :<?= htmlspecialchars($fichier["name"]) ?> </strong></p>
-                <p><strong> Auteur : </strong> <?= htmlspecialchars($fichier["auteur"]) ?></p>
-                <p><strong> Date : </strong><?=  $fichier ["date_formatee"]?></p>
-            </div>
+        <div class="container-image">
+            <img src="photos/<?= htmlspecialchars($fichier["image"]) ?>" alt='<?= htmlspecialchars($fichier["name"]) ?>'>
+            <p><strong> Titre :<?= htmlspecialchars($fichier["name"]) ?> </strong></p>
+            <p><strong> Auteur : </strong> <?= htmlspecialchars($fichier["auteur"]) ?></p>
+            <p><strong> Date : </strong><?= $fichier["date_formatee"] ?></p>
+        </div>
 
         </div>
     <?php endforeach; ?>
@@ -139,4 +150,3 @@ $file_author= ['fichier']['author'];
 
 <!-- echo filesize("test.txt");
 echo filetype("test.txt"); -->
-

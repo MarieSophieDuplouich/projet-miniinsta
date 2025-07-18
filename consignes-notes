@@ -59,7 +59,7 @@ Convention de nommage des fichiers uploadés	Les fichiers doivent être nommés 
 
     </div>
 
-    <!-- input mettre un id label pour envoyer et pour parcourir ton id css display none pour le supprimer -->
+   
  <!-- foreach possible -->
   <!-- comment détecter une entrée d'un visiteur sur un site en php -->
  <!-- j compris entre 1 et 2 0 et 1 rand de 1 attribuer un chiffre au hasard à tes phantomes rand sur 2 un jet de dé attribuer un numéro de phantôme-->

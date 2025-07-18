@@ -39,7 +39,7 @@ h2 {
 
 
 input {
-    background-color: #01b7b4;
+    background-color: #fff;
     color: Black;
     width: 334;
     height: 70;
@@ -48,12 +48,10 @@ input {
     left: 30px;
 
 }
-/* #inputquiposeprobleme{
-    display: none;
-} */
 
 label{
-    background-color: #FF00B3;
+    background-color: #fff;
+    color: black;
 }
 
 img {
@@ -189,16 +187,19 @@ img {
         0 0 60px   #01b7b4;
 }
 
-.galerie{
+/* .galerie{
 
-}
+} */
+
 .container-image{
+
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
 form{
+    background-color: #FF00B3;
     display: grid;
     grid-template-columns: repeat(4,1fr);
     flex-wrap: wrap;

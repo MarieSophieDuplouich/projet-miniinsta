@@ -95,7 +95,7 @@
             </div>
 
     <?php endforeach; ?>
-
+  <img  class="pub"    src="assets/pub-imnotahuman-check.webp" alt="pub imnotahuman check" >
  <footer>
         <nav>
             <ul>

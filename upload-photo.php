@@ -1,110 +1,100 @@
-
 <?php
 
-        //  ancien code
-        $isSuccessful = false;
-        // Si le forumlaire à bien soumis un input nommé "picture"
-        if (isset($_FILES["picture"]["tmp_name"]) && isset($_POST["author"])) {
-            // var_dump($_FILES); // j'affiche les informations du fichier uploadé pour m'aider au débogage
-            $author = $_POST["author"];
-            // Je récupère le chemin temporaire du fichier uploadé
-            $chemin_tmp = $_FILES["picture"]["tmp_name"];
-            $originalName = $_FILES["picture"]["name"];
-            $timestamp = date("YmdHis");
+$fichiers = [];
+$isSuccessful = false;
+// Si le forumlaire à bien soumis un input nommé "picture"
+if (isset($_FILES["picture"]["tmp_name"]) && isset($_POST["author"])) {
 
-            $newfileName =  $timestamp . '-' . $author . '-' . $originalName;
+    $fichier = [];
+    $fichier["author"] = $_POST["author"];
+    // Je récupère le chemin temporaire du fichier uploadé
+    $fichier["chemin_tmp"] = $_FILES["picture"]["tmp_name"];
+    $fichier["originalName"]  = $_FILES["picture"]["name"];
+    $fichier["timestamp"] = date("YmdHis");
 
-            // A l'aide du chemin temporaire, je déplace le fichier vers le dossier "photos/" avec le nom du fichier uploadé
-            $isSuccessful = move_uploaded_file($chemin_tmp, "photos/" .  $newfileName);
- 
-        }
+    $fichier["newfilename"] = $fichier["timestamp"] . '-' . $fichier["author"] . '-' . $fichier["originalName"];
 
-
-    //    $fichiers = [];
-    //    $isSuccessful = false;
-    //     // Si le forumlaire à bien soumis un input nommé "picture"
-    //     if (isset($_FILES["picture"]["tmp_name"]) && isset($_POST["author"])) {
-    //         // var_dump($_FILES); // j'affiche les informations du fichier uploadé pour m'aider au débogage
-            
-    //         $fichier = [];
-    //         $fichier["author"] = $_POST["author"];
-    //         // Je récupère le chemin temporaire du fichier uploadé
-    //         $fichier["chemin_tmp"] = $_FILES["picture"]["tmp_name"];
-    //         $fichier["originalName"]  = $_FILES["picture"]["name"];
-    //         $fichier["timestamp"] = date("YmdHis");
-
-    //         $fichier =  $fichier["timestamp"]  . '-' .  $fichier["author"]. '-' . $fichier["originalName"];
-    //         $fichiers[] = $fichier;
-    //         // A l'aide du chemin temporaire, je déplace le fichier vers le dossier "photos/" avec le nom du fichier uploadé
-    //         $isSuccessful = move_uploaded_file($fichier["chemin_tmp"], "photos/" .  $fichier["newfileName"]);
- 
-    //     }
+    // A l'aide du chemin temporaire, je déplace le fichier vers le dossier "photos/" avec le nom du fichier uploadé
+    $isSuccessful = move_uploaded_file($fichier["chemin_tmp"], "photos/" .  $fichier["newfilename"]);
+    if ($isSuccessful) {
+        $fichiers[] = $fichier;
+    }
+}
 
 
 
-        ?>
+?>
 
-       <?php if ($isSuccessful == true) : ?>
-           <h1>Upload Réussi ! </h1>
-       <?php else : ?>
+<?php if ($isSuccessful == true) : ?>
+    <h1>Upload Réussi ! </h1>
+<?php else : ?>
 
-           <h1>Upload échoué ! </h1>
-       <?php endif; ?>
-
-
-       <div class="container">
-           <div class="btn"><a href="/">Accueil</a></div>
-       </div>
+    <h1>Upload échoué ! </h1>
+<?php endif; ?>
 
 
-       <?php $photos_dir = opendir("photos"); ?>
+<!-- ici je lis ajoute ma photo dans la partie mobile -->
 
-       <?php $photos_dir = opendir("photos");
-        $file_name = readdir($photos_dir); // Premier fichier
-        echo $file_name;
-        $file_name = readdir($photos_dir); // Deuxième fichier
-        echo $file_name; ?>
+<?php $photos_dir = opendir("photos"); ?>
+<?php
+function lire_dossier()
+{
+    $file_names = [];
+    try {
+        $photos_dir = opendir("photos");
+
+        do {
+            $file_name = readdir($photos_dir);
+
+            // Je n'affiche pas les fichiers cachés (commençant par un point) et les répertoires spéciaux "." et ".."
+            if ($file_name && $file_name != "." && $file_name != ".." && $file_name != "/") {
+                $file_names[] = $file_name; // J'ajoute le nom du fichier à la liste
+
+            }
+        } while ($file_name);
+    } catch (\Throwable $th) {
+        throw $th;
+    }
+    return $file_names;
+}
+ $liste_fichiers = lire_dossier();
+?>
 
 
-   <!DOCTYPE html>
-   <html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 
-   <head>
-       <meta charset="UTF-8">
-       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-       <title>Upload</title>
-       <link rel="stylesheet" href="assets/upload.css">
-   </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload</title>
+    <link rel="stylesheet" href="assets/upload.css">
+</head>
 
-   <body>
-        <img  class="pub"    src="assets/pub-imnotahuman-check.webp" alt="pub imnotahuman check" >
+<body>
+    <img class="pub" src="assets/pub-imnotahuman-check.webp" alt="pub imnotahuman check">
 
-   <?php 
-            echo "<div>";
-            echo "<img src='photos/$newfileName ' alt = ' $newfileName'><br>";
-            echo "<p><strong> Auteur:</strong>" . htmlspecialchars($author) . "</p>";
-            echo "<p><strong> Date :</strong> $timestamp</p>";
-            echo "</div>"; //ancien code
-            ?>
-
-          <?php foreach ($fichiers as $fichier): ?>
-            <!-- ce que je veux -->
-            <div class="container-image">
-                <img src="photos/<?= htmlspecialchars($fichier["newfileName"]) ?>" alt='<?= htmlspecialchars($fichier["newfileName"]) ?>'>
-                <p><strong> Auteur : </strong> <?= htmlspecialchars($fichier["author"]) ?></p>
-                <p><strong> Date : </strong><?=  $fichier ["timestamp"]?></p> 
-            </div>
+    <div class="container">
+        <div class="btn"><a href="/">Accueil</a></div>
+    </div>
+    <?php foreach ($fichiers as $fichier): ?>
+        <!-- ce que je veux -->
+        <div class="container-image">
+            <img src="photos/<?= htmlspecialchars($fichier["newfilename"]) ?>" alt='<?= htmlspecialchars($fichier["newfilename"]) ?>'>
+            <p><strong> Auteur : </strong> <?= htmlspecialchars($fichier["author"]) ?></p>
+            <p><strong> Date : </strong><?= $fichier["timestamp"] ?></p>
+        </div>
     <?php endforeach; ?>
 
- <footer>
+    <footer>
         <nav>
             <ul>
                 <li><a href="index.php"><img src="./assets/Accueil.svg" alt="Accueil"></a></li>
-                <li><a href="news.asp"><img src="./assets/Ajouter.svg" alt="Ajouter"></a></li>
-                <li><a href="contact.asp"><img src="./assets/Envoyer.svg" alt="Envoyer"></a></li>
+                <li><a href="<?= $liste_fichiers ?>"><img src="./assets/Ajouter.svg" alt="Ajouter"></a></li>
+                <li><a  type="submit" value="Submit"><img src="./assets/Envoyer.svg" alt="Envoyer"></a></li>
             </ul>
         </nav>
     </footer>
-   </body>
+</body>
 
-   </html>
+</html>

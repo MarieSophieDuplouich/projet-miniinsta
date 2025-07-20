@@ -5,9 +5,9 @@ window.addEventListener('DOMContentLoaded', () =>{
 
     container.classList.add('show');
 
-    // il disparaît au bout de 5 secondes (millisecondes dans le code)
+    // il disparaît au bout de 3 secondes (millisecondes dans le code)
     setTimeout(() => {
         container.classList.remove('show');
 
-    }, 5000);
+    }, 3000);
 });

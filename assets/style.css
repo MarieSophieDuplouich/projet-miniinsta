@@ -13,6 +13,58 @@ body {
     cursor: grab;
 
 }
+
+/* jumpscare fantôme */
+#container-jumpscare {
+    box-shadow: 0 0 5px #01b7b4,
+        0 0 15px #01b7b4,
+        0 0 30px #01b7b4,
+        0 0 60px #01b7b4;
+
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(1, 183, 180, 0.85);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+        visibility: hidden;
+        opacity:0;
+        transition: opacity 0.3 ease;
+}
+
+#container-jumpscare.show{
+    visibility:visible;
+    opacity:1;
+}
+
+#jumpscare{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  animation: shake 0.5s infinite;
+  z-index: 10000;
+}
+
+/* animation du fantôme*/
+
+@keyframes shake{
+    0% {transform: translate(0px,0px);}
+    25% {transform: translate(3px,-3px);}
+    50% {transform: translate(-3px,3px);}
+    75% {transform: translate(3px,3px);}
+    100% {transform: translate(0px,0px);}
+}
+
+/* jumpscare fantôme fin */
+
+
 .pub{
 
     width: 70%;

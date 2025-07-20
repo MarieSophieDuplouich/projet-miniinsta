@@ -55,28 +55,21 @@ foreach ($liste_src as $file_name) {
 //sinon il apparaît//
 
 
-// $ghosts = ['https://www.youtube.com/embed/VejFr5tkSgU?start=606&end=609&autoplay=1&mute=1&controls=0&modestbranding=1&rel=0',
+function Jumpscare(){
+$ghosts = ['assets/ghost1.gif',
+'assets/ghost2.gif',
+'assets/ghost3.gif'
+];
 
-//     'https://www.youtube.com/embed/DEZWY-BWskY?start=250&end=251&autoplay=1&mute=1&controls=0&modestbranding=1&rel=0'
-//     ];
+$lefantomeapparait = $ghosts[array_rand($ghosts)];
+return '
+<div id="container-jumpscare">
+<img id="jumpscare" src="'.$lefantomeapparait.'" alt="jumpscare">
+</div>';
 
-// $user = "comment le définir ici?"; //session
+}
 
-// function Jumpscare(){
-
-// if (isset($user => click on index.php)) {
-
-//    echo  "$user see".rand($ghosts). " during 5 secondes";
-//     # code...
-// }
-
-// else {
-//    echo "$ghosts n'apparaît pas";
-// }
-
-// }
-
-// Jumpscare();
+Jumpscare();
 ?>
 
 
@@ -88,12 +81,13 @@ foreach ($liste_src as $file_name) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mini Insta</title>
     <link rel="stylesheet" href="assets/style.css">
+    <script src="assets/script.js"></script>
 </head>
 
 <body>
 
-
-    <!-- <iframe src="" frameborder="0"></iframe> -->
+<img width="560" height="315" class = "pubstatique" src="assets/pubstatique-NOimnotahuman.webp" alt="pub statique NOimnotahuman">
+   <?= Jumpscare() ;?>
     <!-- mettre le label pour l'input -->
     <!-- input mettre un id label pour envoyer et pour parcourir 
        ton id css display none pour le supprimer -->

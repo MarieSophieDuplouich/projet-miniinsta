@@ -65,7 +65,11 @@ input{
 }
 
 input#author{
-    color:#fff;
+      box-shadow:
+        0 0 5px #78cb6e,
+        0 0 15px #78cb6e,
+        0 0 30px #78cb6e,
+        0 0 60px #78cb6e;
     width: 100%;
     max-width: 334px;
     height: 70px;

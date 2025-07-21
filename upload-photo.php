@@ -37,7 +37,7 @@ if (isset($_FILES["picture"]["tmp_name"]) && isset($_POST["author"])) {
 
 <?php $photos_dir = opendir("photos"); ?>
 <?php
-function lire_dossier()
+function boutonsmobilesfonctionnels()
 {
     $file_names = [];
     try {
@@ -57,9 +57,10 @@ function lire_dossier()
     }
     return $file_names;
 }
- $liste_fichiers = lire_dossier();
-?>
+$liste_fichiers = boutonsmobilesfonctionnels();
 
+?>
+<!-- ici je lis ajoute ma photo dans la partie mobile fin -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -89,9 +90,20 @@ function lire_dossier()
     <footer>
         <nav>
             <ul>
-                <li><a href="index.php"><img src="./assets/Accueil.svg" alt="Accueil"></a></li>
-                <li><a href="<?= $liste_fichiers ?>"><img src="./assets/Ajouter.svg" alt="Ajouter"></a></li>
-                <li><a  type="submit" value="Submit"><img src="./assets/Envoyer.svg" alt="Envoyer"></a></li>
+                <form action="upload-photo.php" method="post" enctype="multipart/form-data">
+                    <li><a href="index.php"><img class="icon"src="./assets/Accueil.svg" alt="Accueil"></a></li>
+
+                    <label type="file" for="footer-upload" style="cursor:pointer;">
+                        <li><img class="icon" src="./assets/Ajouter.svg" alt="Ajouter"></li>
+                    </label>
+                    <input id="footer-upload" type="file" name="picture" style="display:none;" onchange="this.form.submit();">
+                    
+
+                    <!-- <label id="author" class="parcours" for="author"></label> -->
+                    <input id="author" type="text" name="author" placeholder="votre nom"  required hidden>
+
+                     <li><a type="submit" value="Submit"><img class="icon" src="./assets/Envoyer.svg" alt="Envoyer"></a></li>
+                </form>
             </ul>
         </nav>
     </footer>

@@ -70,10 +70,16 @@ $liste_fichiers = boutonsmobilesfonctionnels();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Upload</title>
     <link rel="stylesheet" href="assets/upload.css">
+    <script src="assets/script-cacherpub.js"></script>
+
 </head>
 
 <body>
-    <img class="pub" src="assets/pub-imnotahuman-check.webp" alt="pub imnotahuman check">
+    <div class="container-pub" id="container-pub">
+        <img id="pub" class="pub" src="assets/pub-imnotahuman-check.webp " alt="pub imnotahuman check" hidden>
+        <div class="container-pubdoor" id="container-pubdoor"> <img class="pubdoor" id="pubdoor" src="assets/pubstatique-NOimnotahuman.webp " alt="pub imnotahuman">
+        </div>
+    </div>
 
     <div class="container">
         <div class="btn"><a href="/">Accueil</a></div>
@@ -87,24 +93,24 @@ $liste_fichiers = boutonsmobilesfonctionnels();
         </div>
     <?php endforeach; ?>
 
-     <footer>
+    <footer>
         <nav>
             <ul>
-                
+
                 <li>
                     <form class="footer" action="upload-photo.php" method="post" enctype="multipart/form-data">
-                        <li><a href="index.php"><img class="icon" src="./assets/Accueil.svg" alt="Accueil"></a></li>
-                        <label class="label-footer" type="file" for="footer-upload" style="cursor:pointer;">
-                            <img class="icon" src="./assets/Ajouter.svg" alt="Ajouter">
-                        </label>
-                        <input id="footer-upload" type="file" name="picture" style="display:none;" onchange="this.form.submit();">
+                <li><a href="index.php"><img class="icon" src="./assets/Accueil.svg" alt="Accueil"></a></li>
+                <label class="label-footer" type="file" for="footer-upload" style="cursor:pointer;">
+                    <img class="icon" src="./assets/Ajouter.svg" alt="Ajouter">
+                </label>
+                <input id="footer-upload" type="file" name="picture" style="display:none;" onchange="this.form.submit();">
 
 
-                        <!-- <label id="author" class="parcours" for="author"></label> -->
-                        <input id="author" type="text" name="author" placeholder="votre nom" required hidden>
+                <!-- <label id="author" class="parcours" for="author"></label> -->
+                <input id="author" type="text" name="author" placeholder="votre nom" required hidden>
 
-                        <button type="submit" value="Submit" style="background:none;border:none;cursor:pointer;"><img class="icon" src="./assets/Envoyer.svg" alt="Envoyer"></button>
-                    </form>
+                <button type="submit" value="Submit" style="background:none;border:none;cursor:pointer;"><img class="icon" src="./assets/Envoyer.svg" alt="Envoyer"></button>
+                </form>
                 </li>
             </ul>
         </nav>

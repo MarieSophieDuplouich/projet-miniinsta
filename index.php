@@ -117,64 +117,66 @@ $liste_fichiers = boutonsmobilesfonctionnels();
 
 <body>
 
-    <img width="560" height="315" class="pubstatique" src="assets/pubstatique-NOimnotahuman.webp" alt="pub statique NOimnotahuman">
     <?= Jumpscare(); ?>
     <!-- mettre le label pour l'input -->
     <!-- input mettre un id label pour envoyer et pour parcourir 
        ton id css display none pour le supprimer -->
     <h1>Mini Insta</h1>
-    <img class="pub" src="assets/door-imnotahuman.gif " alt="pub imnotahuman door">
 
-    <h2>Ajoutez une photo !</h2>
-    <form action="upload-photo.php" method="post" enctype="multipart/form-data">
+    <div class="container-pub" id="container-pubdoor"> 
+    <img class="pubdoor" id="pubdoor" src="assets/pubstatique-NOimnotahuman.webp " alt="pub imnotahuman">
+    </div>
 
-        <label type="file" name="picture" class="parcours" id="parcourir" for="inputquiposeprobleme"> Parcourir</label>
-        <input id="inputquiposeprobleme" type="file" name="picture" placeholder="Parcourir ..." required hidden>
+        <h2>Ajoutez une photo !</h2>
+        <form action="upload-photo.php" method="post" enctype="multipart/form-data">
 
-        <input class="nom" type="text" name="author" placeholder="votre nom" required>
+            <label type="file" name="picture" class="parcours" id="parcourir" for="inputquiposeprobleme"> Parcourir</label>
+            <input id="inputquiposeprobleme" type="file" name="picture" placeholder="Parcourir ..." required hidden>
 
-        <div class="container">
-            <!-- <label class="btn" for="inputquiposeprobleme" type="submit" value="Submit">Envoyer uuuuuuu</label> -->
+            <input class="nom" type="text" name="author" placeholder="votre nom" required>
+
+            <div class="container">
+                <!-- <label class="btn" for="inputquiposeprobleme" type="submit" value="Submit">Envoyer uuuuuuu</label> -->
+                <!-- le beau bouton -->
+                <div class="btn"><button type="submit" value="Submit">Envoyer</button></div>
+            </div>
             <!-- le beau bouton -->
-            <div class="btn"><button type="submit" value="Submit">Envoyer</button></div>
-        </div>
-        <!-- le beau bouton -->
-    </form>
+        </form>
 
 
-    <h2>Galerie I'm not a Human</h2>
-    <?php foreach ($fichiers as $fichier): ?>
-        <div class="container-image">
-            <img src="photos/<?= htmlspecialchars($fichier["image"]) ?>" alt='<?= htmlspecialchars($fichier["name"]) ?>'>
-            <p><strong> Titre :<?= htmlspecialchars($fichier["name"]) ?> </strong></p>
-            <p><strong> Auteur : </strong> <?= htmlspecialchars($fichier["auteur"]) ?></p>
-            <p><strong> Date : </strong><?= $fichier["date_formatee"] ?></p>
-        </div>
+        <h2>Galerie I'm not a Human fandom</h2>
+        <?php foreach ($fichiers as $fichier): ?>
+            <div class="container-image">
+                <img src="photos/<?= htmlspecialchars($fichier["image"]) ?>" alt='<?= htmlspecialchars($fichier["name"]) ?>'>
+                <p><strong> Titre :<?= htmlspecialchars($fichier["name"]) ?> </strong></p>
+                <p><strong> Auteur : </strong> <?= htmlspecialchars($fichier["auteur"]) ?></p>
+                <p><strong> Date : </strong><?= $fichier["date_formatee"] ?></p>
+            </div>
 
-        </div>
-    <?php endforeach; ?>
-    <footer>
-        <nav>
-            <ul>
-                
-                <li>
-                    <form class="footer" action="upload-photo.php" method="post" enctype="multipart/form-data">
-                        <li><a href="index.php"><img class="icon" src="./assets/Accueil.svg" alt="Accueil"></a></li>
-                        <label class="label-footer" type="file" for="footer-upload" style="cursor:pointer;">
-                            <img class="icon" src="./assets/Ajouter.svg" alt="Ajouter">
-                        </label>
-                        <input id="footer-upload" type="file" name="picture" style="display:none;" onchange="this.form.submit();">
+    </div>
+<?php endforeach; ?>
+<footer>
+    <nav>
+        <ul>
+
+            <li>
+                <form class="footer" action="upload-photo.php" method="post" enctype="multipart/form-data">
+            <li><a href="index.php"><img class="icon" src="./assets/Accueil.svg" alt="Accueil"></a></li>
+            <label class="label-footer" type="file" for="footer-upload" style="cursor:pointer;">
+                <img class="icon" src="./assets/Ajouter.svg" alt="Ajouter">
+            </label>
+            <input id="footer-upload" type="file" name="picture" style="display:none;" onchange="this.form.submit();">
 
 
-                        <!-- <label id="author" class="parcours" for="author"></label> -->
-                        <input id="author" type="text" name="author" placeholder="votre nom" required hidden>
+            <!-- <label id="author" class="parcours" for="author"></label> -->
+            <input id="author" type="text" name="author" placeholder="votre nom" required hidden>
 
-                        <button type="submit" value="Submit" style="background:none;border:none;cursor:pointer;"><img class="icon" src="./assets/Envoyer.svg" alt="Envoyer"></button>
-                    </form>
-                </li>
-            </ul>
-        </nav>
-    </footer>
+            <button type="submit" value="Submit" style="background:none;border:none;cursor:pointer;"><img class="icon" src="./assets/Envoyer.svg" alt="Envoyer"></button>
+            </form>
+            </li>
+        </ul>
+    </nav>
+</footer>
 
 </body>
 

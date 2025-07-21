@@ -55,18 +55,19 @@ foreach ($liste_src as $file_name) {
 //sinon il apparaît//
 
 
-function Jumpscare(){
-$ghosts = ['assets/ghost1.gif',
-'assets/ghost2.gif',
-'assets/ghost3.gif'
-];
+function Jumpscare()
+{
+    $ghosts = [
+        'assets/ghost1.gif',
+        'assets/ghost2.gif',
+        'assets/ghost3.gif'
+    ];
 
-$lefantomeapparait = $ghosts[array_rand($ghosts)];
-return '
+    $lefantomeapparait = $ghosts[array_rand($ghosts)];
+    return '
 <div id="container-jumpscare">
-<img id="jumpscare" src="'.$lefantomeapparait.'" alt="jumpscare">
+<img id="jumpscare" src="' . $lefantomeapparait . '" alt="jumpscare">
 </div>';
-
 }
 
 Jumpscare();
@@ -116,13 +117,13 @@ $liste_fichiers = boutonsmobilesfonctionnels();
 
 <body>
 
-<img width="560" height="315" class = "pubstatique" src="assets/pubstatique-NOimnotahuman.webp" alt="pub statique NOimnotahuman">
-   <?= Jumpscare() ;?>
+    <img width="560" height="315" class="pubstatique" src="assets/pubstatique-NOimnotahuman.webp" alt="pub statique NOimnotahuman">
+    <?= Jumpscare(); ?>
     <!-- mettre le label pour l'input -->
     <!-- input mettre un id label pour envoyer et pour parcourir 
        ton id css display none pour le supprimer -->
     <h1>Mini Insta</h1>
-        <img  class="pub"    src="assets/door-imnotahuman.gif " alt="pub imnotahuman door" >
+    <img class="pub" src="assets/door-imnotahuman.gif " alt="pub imnotahuman door">
 
     <h2>Ajoutez une photo !</h2>
     <form action="upload-photo.php" method="post" enctype="multipart/form-data">
@@ -152,23 +153,25 @@ $liste_fichiers = boutonsmobilesfonctionnels();
 
         </div>
     <?php endforeach; ?>
- <footer>
+    <footer>
         <nav>
             <ul>
-                <form class="footer" action="upload-photo.php" method="post" enctype="multipart/form-data">
-                    <li><a href="index.php"><img class="icon"src="./assets/Accueil.svg" alt="Accueil"></a></li>
+                
+                <li>
+                    <form class="footer" action="upload-photo.php" method="post" enctype="multipart/form-data">
+                        <li><a href="index.php"><img class="icon" src="./assets/Accueil.svg" alt="Accueil"></a></li>
+                        <label type="file" for="footer-upload" style="cursor:pointer;">
+                            <img class="icon" src="./assets/Ajouter.svg" alt="Ajouter">
+                        </label>
+                        <input id="footer-upload" type="file" name="picture" style="display:none;" onchange="this.form.submit();">
 
-                    <label type="file" for="footer-upload" style="cursor:pointer;">
-                        <li><img class="icon" src="./assets/Ajouter.svg" alt="Ajouter"></li>
-                    </label>
-                    <input id="footer-upload" type="file" name="picture" style="display:none;" onchange="this.form.submit();">
-                    
 
-                    <!-- <label id="author" class="parcours" for="author"></label> -->
-                    <input id="author" type="text" name="author" placeholder="votre nom"  required hidden>
+                        <!-- <label id="author" class="parcours" for="author"></label> -->
+                        <input id="author" type="text" name="author" placeholder="votre nom" required hidden>
 
-                     <li><a type="submit" value="Submit"><img class="icon" src="./assets/Envoyer.svg" alt="Envoyer"></a></li>
-                </form>
+                        <button type="submit" value="Submit" style="background:none;border:none;cursor:pointer;"><img class="icon" src="./assets/Envoyer.svg" alt="Envoyer"></button>
+                    </form>
+                </li>
             </ul>
         </nav>
     </footer>

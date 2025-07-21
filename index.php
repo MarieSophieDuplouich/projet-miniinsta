@@ -160,7 +160,7 @@ $liste_fichiers = boutonsmobilesfonctionnels();
                 <li>
                     <form class="footer" action="upload-photo.php" method="post" enctype="multipart/form-data">
                         <li><a href="index.php"><img class="icon" src="./assets/Accueil.svg" alt="Accueil"></a></li>
-                        <label type="file" for="footer-upload" style="cursor:pointer;">
+                        <label class="label-footer" type="file" for="footer-upload" style="cursor:pointer;">
                             <img class="icon" src="./assets/Ajouter.svg" alt="Ajouter">
                         </label>
                         <input id="footer-upload" type="file" name="picture" style="display:none;" onchange="this.form.submit();">

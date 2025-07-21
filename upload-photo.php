@@ -87,26 +87,29 @@ $liste_fichiers = boutonsmobilesfonctionnels();
         </div>
     <?php endforeach; ?>
 
-    <footer>
+     <footer>
         <nav>
             <ul>
-                <form action="upload-photo.php" method="post" enctype="multipart/form-data">
-                    <li><a href="index.php"><img class="icon"src="./assets/Accueil.svg" alt="Accueil"></a></li>
+                
+                <li>
+                    <form class="footer" action="upload-photo.php" method="post" enctype="multipart/form-data">
+                        <li><a href="index.php"><img class="icon" src="./assets/Accueil.svg" alt="Accueil"></a></li>
+                        <label class="label-footer" type="file" for="footer-upload" style="cursor:pointer;">
+                            <img class="icon" src="./assets/Ajouter.svg" alt="Ajouter">
+                        </label>
+                        <input id="footer-upload" type="file" name="picture" style="display:none;" onchange="this.form.submit();">
 
-                    <label type="file" for="footer-upload" style="cursor:pointer;">
-                        <li><img class="icon" src="./assets/Ajouter.svg" alt="Ajouter"></li>
-                    </label>
-                    <input id="footer-upload" type="file" name="picture" style="display:none;" onchange="this.form.submit();">
-                    
 
-                    <!-- <label id="author" class="parcours" for="author"></label> -->
-                    <input id="author" type="text" name="author" placeholder="votre nom"  required hidden>
+                        <!-- <label id="author" class="parcours" for="author"></label> -->
+                        <input id="author" type="text" name="author" placeholder="votre nom" required hidden>
 
-                     <li><a type="submit" value="Submit"><img class="icon" src="./assets/Envoyer.svg" alt="Envoyer"></a></li>
-                </form>
+                        <button type="submit" value="Submit" style="background:none;border:none;cursor:pointer;"><img class="icon" src="./assets/Envoyer.svg" alt="Envoyer"></button>
+                    </form>
+                </li>
             </ul>
         </nav>
     </footer>
+
 </body>
 
 </html>

@@ -354,6 +354,10 @@ form {
         color: aqua;
         text-align: center;
     }
+
+    .label-footer{
+        background-color: #FF00B3;
+    }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
@@ -409,7 +413,30 @@ form {
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {}
+@media only screen and (min-width: 992px) {
+    form {
+    margin: 50px;
+    background-color: #E379CC;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 5px;
+
+}
+}
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {}
+@media only screen and (min-width: 1200px) {
+
+    form {
+    margin: 50px;
+    background-color: #E379CC;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 5px;
+
+}
+}

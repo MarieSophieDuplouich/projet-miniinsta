@@ -113,6 +113,7 @@ $liste_fichiers = boutonsmobilesfonctionnels();
     <title>Mini Insta</title>
     <link rel="stylesheet" href="assets/style.css">
     <script src="assets/script.js"></script>
+    <script src="assets/script-cacherpub.js"></script>
 </head>
 
 <body>
@@ -123,8 +124,8 @@ $liste_fichiers = boutonsmobilesfonctionnels();
        ton id css display none pour le supprimer -->
     <h1>Mini Insta</h1>
 
-    <div class="container-pub" id="container-pubdoor"> 
-    <img class="pubdoor" id="pubdoor" src="assets/pubstatique-NOimnotahuman.webp " alt="pub imnotahuman">
+    <div class="container-pub" id="container-pub"> 
+    <img class="pubdoor" id="pubdoor" src="assets/door-imnotahuman.gif " alt="pub imnotahuman">
     </div>
 
         <h2>Ajoutez une photo !</h2>
@@ -165,7 +166,7 @@ $liste_fichiers = boutonsmobilesfonctionnels();
             <label class="label-footer" type="file" for="footer-upload" style="cursor:pointer;">
                 <img class="icon" src="./assets/Ajouter.svg" alt="Ajouter">
             </label>
-            <input id="footer-upload" type="file" name="picture" style="display:none;" onchange="this.form.submit();">
+            <input id="footer-upload" type="file" name="picture" style="display:none;" onchange="this.form.submit();" required>
 
 
             <!-- <label id="author" class="parcours" for="author"></label> -->

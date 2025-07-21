@@ -76,9 +76,7 @@ $liste_fichiers = boutonsmobilesfonctionnels();
 
 <body>
     <div class="container-pub" id="container-pub">
-        <img id="pub" class="pub" src="assets/pub-imnotahuman-check.webp " alt="pub imnotahuman check" hidden>
-        <div class="container-pubdoor" id="container-pubdoor"> <img class="pubdoor" id="pubdoor" src="assets/pubstatique-NOimnotahuman.webp " alt="pub imnotahuman">
-        </div>
+        <img id="pub" class="pub" src="assets/pub-imnotahuman-check.webp " alt="pub imnotahuman check">
     </div>
 
     <div class="container">
@@ -92,7 +90,6 @@ $liste_fichiers = boutonsmobilesfonctionnels();
             <p><strong> Date : </strong><?= $fichier["timestamp"] ?></p>
         </div>
     <?php endforeach; ?>
-
     <footer>
         <nav>
             <ul>

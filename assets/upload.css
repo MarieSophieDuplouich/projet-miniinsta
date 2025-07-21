@@ -20,7 +20,6 @@ body {
 #container-pub.show {
    
     opacity: 1;
-
     width: 300px;
     height: auto;
 }
@@ -36,34 +35,7 @@ body {
     width: 300px;
     height: auto;
 }
-
-#container-pubdoor.show {
-    opacity: 1;
-    width: 500px;
-    height: auto;
-}
-.container-pubdoor{
- display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    visibility: visible;
-
-}
-.pubdoor {
-    width: 300px;
-    height: auto;
-}
-
-
-
-
-
-
 /* pub */
-
-
-
 
 a {
     color: black;

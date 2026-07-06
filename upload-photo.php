@@ -2,7 +2,7 @@
 
 $fichiers = [];
 $isSuccessful = false;
-// Si le forumlaire à bien soumis un input nommé "picture"
+// Si le formulaire a bien soumis un input nommé "picture"
 if (isset($_FILES["picture"]["tmp_name"]) && isset($_POST["author"])) {
 
     $fichier = [];
